@@ -8,79 +8,87 @@ import Daemon from '../class_daemon';
 test.each([
   21, 'moreThen10simbols', 'a',
 ])('cheking class Zombie wrong name', (name) => {
-  expect(() => {
-    const character = new Zombie(name);
-  }).toThrow('incorrect values');
-  expect(() => {
-    const character = new Bowman(name);
-  }).toThrow('incorrect values');
-  expect(() => {
-    const character = new Magician(name);
-  }).toThrow('incorrect values');
-  expect(() => {
-    const character = new Undead(name);
-  }).toThrow('incorrect values');
-  expect(() => {
-    const character = new Daemon(name);
-  }).toThrow('incorrect values');
+  expect(() => new Zombie(name)).toThrow('incorrect values');
+  expect(() => new Bowman(name)).toThrow('incorrect values');
+  expect(() => new Magician(name)).toThrow('incorrect values');
+  expect(() => new Undead(name)).toThrow('incorrect values');
+  expect(() => new Daemon(name)).toThrow('incorrect values');
 });
 
 test('cheking class Zombie right name', () => {
   const character = new Zombie('Zombie');
-  expect(character.name).toBe('Zombie');
-  expect(character.type).toBe('Zombie');
-  expect(character.health).toBe(100);
-  expect(character.level).toBe(1);
-  expect(character.attack).toBe(40);
-  expect(character.defence).toBe(10);
+  const expected = {
+    name: 'Zombie',
+    type: 'Zombie',
+    health: 100,
+    level: 1,
+    attack: 40,
+    defence: 10,
+  };
+  expect(character).toEqual(expected);
 });
 
 test('cheking class Bowman right name', () => {
   const character = new Bowman('Bowman');
-  expect(character.name).toBe('Bowman');
-  expect(character.type).toBe('Bowman');
-  expect(character.health).toBe(100);
-  expect(character.level).toBe(1);
-  expect(character.attack).toBe(25);
-  expect(character.defence).toBe(25);
+  const expected = {
+    name: 'Bowman',
+    type: 'Bowman',
+    health: 100,
+    level: 1,
+    attack: 25,
+    defence: 25,
+  };
+  expect(character).toEqual(expected);
 });
 
 test('cheking class Swordsman right name', () => {
   const character = new Swordsman('Swordsman');
-  expect(character.name).toBe('Swordsman');
-  expect(character.type).toBe('Swordsman');
-  expect(character.health).toBe(100);
-  expect(character.level).toBe(1);
-  expect(character.attack).toBe(40);
-  expect(character.defence).toBe(10);
+  const expected = {
+    name: 'Swordsman',
+    type: 'Swordsman',
+    health: 100,
+    level: 1,
+    attack: 40,
+    defence: 10,
+  };
+  expect(character).toEqual(expected);
 });
 
 test('cheking class Magician right name', () => {
   const character = new Magician('Magician');
-  expect(character.name).toBe('Magician');
-  expect(character.type).toBe('Magician');
-  expect(character.health).toBe(100);
-  expect(character.level).toBe(1);
-  expect(character.attack).toBe(10);
-  expect(character.defence).toBe(40);
+  const expected = {
+    name: 'Magician',
+    type: 'Magician',
+    health: 100,
+    level: 1,
+    attack: 10,
+    defence: 40,
+  };
+  expect(character).toEqual(expected);
 });
 
 test('cheking class Undead right name', () => {
   const character = new Undead('Undead');
-  expect(character.name).toBe('Undead');
-  expect(character.type).toBe('Undead');
-  expect(character.health).toBe(100);
-  expect(character.level).toBe(1);
-  expect(character.attack).toBe(25);
-  expect(character.defence).toBe(25);
+  const expected = {
+    name: 'Undead',
+    type: 'Undead',
+    health: 100,
+    level: 1,
+    attack: 25,
+    defence: 25,
+  };
+  expect(character).toEqual(expected);
 });
 
-test('cheking class Undead right name', () => {
+test('cheking class Daemon right name', () => {
   const character = new Daemon('Daemon');
-  expect(character.name).toBe('Daemon');
-  expect(character.type).toBe('Daemon');
-  expect(character.health).toBe(100);
-  expect(character.level).toBe(1);
-  expect(character.attack).toBe(10);
-  expect(character.defence).toBe(40);
+  const expected = {
+    name: 'Daemon',
+    type: 'Daemon',
+    health: 100,
+    level: 1,
+    attack: 10,
+    defence: 40,
+  };
+  expect(character).toEqual(expected);
 });
